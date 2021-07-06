@@ -6,8 +6,6 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         """
-        
-        
         def dfs(index, path):
             #자리수 만큼 탐색하면 백트래킹
             if len(path) == len(digits):
