@@ -1,6 +1,13 @@
 # https://leetcode.com/problems/permutations/
 
-import copy
+# 재귀 알고리즘
+#1(next_2개),2(next=1개),3 종료 prev_element전부 복사
+#3종료후 팝
+#1,2남음
+#2 종류후 팝
+#1,3 이 prev에 추가된 상태.
+#1,3,2 종료 prev_element 전부 복사
+#2()로 반복!! 
 
 class Solution(object):
     def permute(self, nums):
@@ -8,35 +15,29 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        def dfs(index,path):
-            count = path.count(" ")
-            if count == len(nums):
-                path = path.split(" ")
-                path = path[:-1]
-                result.append(path)
-                return
+        results = []
+        prev_elements = []
 
-            for i in range(index,len(nums)):
-                for j in dic[i]:
-                    if str(j) in path:
-                        test_path = path.split(" ")
-                        if str(j) in test_path:
-                            pass
-                        else: 
-                            dfs(i+1,path+str(j)+" ")
-                    else:
-                        dfs(i+1,path+str(j)+" ")
+        def dfs(elements):
+            #리프 노드일 때 결과 추가
+            if len(elements) == 0:
+                results.append(prev_elements[:])
 
-        
-        if not nums:
-            return []
+            for e in elements:
+                next_elements = elements[:]
+                next_elements.remove(e)
 
-        dic = {}
-        for i in range(len(nums)):
-            dic[i] = nums
-        #print(dic)
+                prev_elements.append(e)
+                dfs(next_elements)
+                prev_elements.pop()
         
-        result = []
-        dfs(0,"")
-        
-        return result
+        dfs(nums)
+        return results
+
+#라이브러리를 사용한 방식
+# list(map(list, itertools.permutation(nums)))
+
+#객체 복사 방식
+#b = a[:]
+#b = copy.deepcopy(a) 복잡한 이중 배열도 전부 복사 가능! 
+#b = a.copy()
