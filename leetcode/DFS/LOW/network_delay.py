@@ -51,3 +51,4 @@ class Solution(object):
                     
             
         
+#최소힙을 사용하면, 작은거 비교하지 않아도, 작은거만 dist에 들어갈수 있음. 
