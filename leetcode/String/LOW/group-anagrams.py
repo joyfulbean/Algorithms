@@ -1,3 +1,4 @@
+https://leetcode.com/problems/group-anagrams/
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         #문자열을 파싱해서 정렬하고 같은거 끼리 묶기
