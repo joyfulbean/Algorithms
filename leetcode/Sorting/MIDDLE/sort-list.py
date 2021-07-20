@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/sort-list/
 
-
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, val=0, next=None):
@@ -11,9 +10,9 @@ class Solution(object):
         if l1 and l2:
             if l1.val > l2.val:
                 l1, l2 = l2, l1
-                l1.next = self.mergeTwoLists(l1.next, l2)
+            l1.next = self.mergeTwoLists(l1.next, l2)
         return l1 or l2
-    
+    #l1을 리턴하고, l1이 없으면 l2리턴
     def sortList(self, head):
         """
         :type head: ListNode
