@@ -45,3 +45,5 @@
   -  [다이나믹 프로그래밍](https://www.notion.so/DP-43a66e45b0864021b13155400c2ed1a4)
 
 
+## 아직도 채워지지 않았다면 참고자료 추천: 이것이 코딩테스트다
+  -  [이코테 유튜브 강의](https://www.youtube.com/watch?v=m-9pAwq1o3w&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC)
