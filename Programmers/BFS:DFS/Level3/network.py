@@ -3,11 +3,10 @@ def solution(n, computers):
     
     def bfs(edge_list, visited, nodes):
         count = 0
-        #visited 0 아닌걸 찾아서 그룹핑~~~
-        for v in visited:
-            if v == 0:
+        for i in range(1,len(visited)):
+            if visited[i] == 0:
                 queue = []
-                queue.append(nodes[v])
+                queue.append(nodes[i-1])
         
                 while queue:
                     node = queue.pop(0)
@@ -30,9 +29,6 @@ def solution(n, computers):
         for j in range(n):
             if computers[i][j] == 1:
                 edge_list[i+1].append(j+1)
-    print(edge_list)
-    print(visited)
-    
     answer = bfs(edge_list, visited, nodes)
 
     return answer
