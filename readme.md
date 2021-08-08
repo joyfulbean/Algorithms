@@ -14,6 +14,8 @@
 
 4)데일리 문제 및 부족한 유형 채우기 (매일 4문제 추천)
 
+**Level 1**
+
 ## 파이썬
   -  [기본 문법 공부하기](https://guiltless-operation-40b.notion.site/Python-b0e645f2394d40b093c00138e19772d7)
   -  [Big-O notation](https://guiltless-operation-40b.notion.site/Coding-Test-07efe057db644258ad5e115955ec3818)
@@ -47,3 +49,19 @@
 
 ## 아직도 채워지지 않았다면 참고자료 추천: 이것이 코딩테스트다
   -  [이코테 유튜브 강의](https://www.youtube.com/watch?v=m-9pAwq1o3w&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC)
+
+**Level 2**
+## 프로그래머스 고득점 kit 연습 문제 풀이
+[연습문제 풀러가기](https://programmers.co.kr/learn/challenges)
+
+## 문제 해설
+-  [DFS/BFS](https://guiltless-operation-40b.notion.site/DFS-BFS-2e580c36a2414d4087afb1e5209157ef)
+-  [Graph](https://guiltless-operation-40b.notion.site/Graph-211c4059e4b34befadf41eaf6bc2160a)
+-  [Binary_Search](https://guiltless-operation-40b.notion.site/Binary_Search-2cf933a3a96a4338aec2e96931f2cd8c)
+-  [Sorting](https://guiltless-operation-40b.notion.site/Sorting-28f6b47967764f40812cf124b73f348b)
+-  [Heap](https://guiltless-operation-40b.notion.site/Heap-7859887d1e004a908f36891bd0783b0f)
+-  [DP](https://guiltless-operation-40b.notion.site/DP-fd9ae22115204216b22f6e9d7a09c083)
+-  [Greedy](https://guiltless-operation-40b.notion.site/Greedy-2be6d3c82dab40368141ed23430f521b)
+-  [Hash](https://guiltless-operation-40b.notion.site/Hash-6cf273bc6d9940a88147e5d96b2e600b)
+-  [Brute Force](https://guiltless-operation-40b.notion.site/9914caa40ad04ade96ab795a80ef6455)
+-  [Stack and Queue](https://guiltless-operation-40b.notion.site/b82cb8e7430f4e34a8e82c43d9143239)
