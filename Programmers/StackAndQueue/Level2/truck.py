@@ -1,23 +1,22 @@
 def solution(bridge_length, weight, truck_weights):
     done = []
     ing = []
-    clock = 1
+    clock = 0
+    num = len(truck_weights)
+    prev = 0
     
-    while len(done) != len(truck_weights):
-        if clock % bridge_length == 0:
-            for _ in range (bridge_length):
-                if ing:
-                    done.append(ing.pop(0))
-        ##다 비었을때...
-        expected_weight = truck_weights[0] + sum(ing)
-        if expected_weight <= weight and truck_weights:
-            truck = truck_weights.pop(0)
-            ing.append(truck)
-        else:
-            ing.append(0)
+    while len(done) != num:
+        if clock != 0:
+            add = 0
+            if ing and clock - ing[0][1] == bridge_length: 
+                prev = ing.pop(0)
+                done.append(prev)
+            for k in ing:
+                add += k[0]
+            if truck_weights and truck_weights[0] + add <= weight:
+                truck = truck_weights.pop(0)
+                ing.append([truck, clock])
+        # print(clock, done,ing)
         clock += 1
-        print(clock, done,ing)
-        # break
     
-    answer = len(done)
-    return answer
+    return clock-1
