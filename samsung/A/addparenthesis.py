@@ -10,8 +10,6 @@ def dfs(idx,ret):
     if idx + 1 < len(op):
         dfs(idx+2, cal(ret, op[idx], cal(num[idx+1], op[idx+1], num[idx+2])))
 
-
-
 def cal(n1, operation, n2):
     if operation == '*':
         return n1 * n2
