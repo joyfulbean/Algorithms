@@ -65,3 +65,5 @@
 -  [Hash](https://joyfulbean.notion.site/Hash-6cf273bc6d9940a88147e5d96b2e600b)
 -  [Brute Force](https://joyfulbean.notion.site/9914caa40ad04ade96ab795a80ef6455)
 -  [Stack and Queue](https://joyfulbean.notion.site/b82cb8e7430f4e34a8e82c43d9143239)
+
+**Level 3**
