@@ -23,4 +23,3 @@ while 1 not in map_structure:
     start = N - D - 1
     for i in range(start,N):
         for j in range(M):
-            
