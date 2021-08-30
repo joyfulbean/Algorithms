@@ -1,4 +1,5 @@
 # https://www.acmicpc.net/problem/17135
+#### not sure
 import math
 
 def cal_dist((r1,c1),(r2,c2)):
