@@ -1,72 +1,54 @@
-# 1×1, 2×2, 3×3, 4×4, 5×5
+import sys
+sys.setrecursionlimit(10000000)
+input = sys.stdin.readline
 
-def check5(now_placed, paper):
-    if (now_placed[0] + 4 < 10) and (now_placed[1] + 4 < 10):
-        i = now_placed[0]
-        j = now_placed[1]
-        for _ in range(i, i + 5):
-            for _ in range(j, j + 5):
-                print(i, j)
-                if paper[i][j] != 1:
-                    return False
-        return True
-    return False
+def dfs(y, x, count):
+    global answer, used
 
-def check4(now_placed, paper):
-    if (now_placed[0] + 3 < 10) and (now_placed[1] + 3 < 10):
-        i = now_placed[0]
-        j = now_placed[1]
-        for _ in range(4):
-            for _ in range(4):
-                if paper[i][j] != 1:
-                    return False
-        return True
-    return False
+    if y >= 10:
+        answer = min(answer, count)
+        return
 
-def check3(now_placed, paper):
-    if (now_placed[0] + 2 < 10) and (now_placed[1] + 2 < 10):
-        i = now_placed[0]
-        j = now_placed[1]
-        for _ in range(3):
-            for _ in range(3):
-                if paper[i][j] != 1:
-                    return False
-        return True
-    return False
+    if x >= 10:
+        dfs(y+1, 0, count)
+        return
 
-def check2(now_placed, paper):
-    if (now_placed[0] + 1 < 10) and (now_placed[1] + 1 < 10):
-        i = now_placed[0]
-        j = now_placed[1]
-        for _ in range(2):
-            for _ in range(2):
-                print(i,j)
-                if paper[i][j] != 1:
-                    print('hi')
-                    return False
-        return True
-    return False
+    # 현재 좌표가 1일 때
+    # 색종이 붙이기
+    if paper[y][x] == 1:
+        for k in range(5):
+            if used[k] == 5:
+                continue
+            if y + k >= 10 or x + k >= 10:
+                continue
+
+            flag = True
+            for i in range(y, y+k+1):
+                for j in range(x, x+k+1):
+                    if paper[i][j] == 0:
+                        flag = False
+                        break
+                if not flag:
+                    break
+            if flag:
+                for i in range(y, y+k+1):
+                    for j in range(x, x+k+1):
+                        paper[i][j] = 0
+                used[k] += 1
+                dfs(y, x+k+1, count+1)
+
+                used[k] -= 1
+                for i in range(y, y+k+1):
+                    for j in range(x, x+k+1):
+                        paper[i][j] = 1
+    # 현재 좌표가 0이라면
+    # 옆으로 넘어간다.
+    else:
+        dfs(y, x+1, count)
 
 paper = [list(map(int, input().split())) for _ in range(10)]
-print(paper)
+used = [0] * 5
+answer = 26
 
-used_paper = 0
-for i in range(10):
-    for j in range(10):
-        if paper[i][j] == 1:
-            now_placed = (i,j)
-            print(now_placed)
-            #실제로 기록
-            if check5(now_placed, paper):
-                print('change occurr5')
-            elif check4(now_placed, paper):
-                print('change occurr4')
-            elif check3(now_placed, paper):
-                print('change occurr3')
-            elif check2(now_placed, paper):
-                print('change occurr2')
-            else:
-                print('chnage occurr1')
-            used_paper += 1
-print(used_paper)
-
+dfs(0, 0, 0)
+print(answer if answer != 26 else -1)
